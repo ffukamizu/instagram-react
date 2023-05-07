@@ -1,6 +1,6 @@
 export default function Post(props) {
   return (
-    <div class="post">
+    <div class="post" data-test="post">
       <div class="topo">
         <div class="usuario">
           <img src={props.icon} alt={props.name} />
@@ -10,7 +10,7 @@ export default function Post(props) {
           <ion-icon name="ellipsis-horizontal"></ion-icon>
         </div>
       </div>
-      <div class="conteudo">
+      <div class="conteudo" data-test="post-image">
         <img src={props.image} alt={props.name} />
       </div>
       <div class="fundo">
