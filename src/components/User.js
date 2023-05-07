@@ -1,4 +1,4 @@
-export default function User() {
+export default function User(props) {
   return (
     <div class="usuario">
       <img src="./assets/catanacomics.svg" alt="imagem de perfil" />
