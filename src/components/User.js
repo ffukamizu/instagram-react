@@ -2,18 +2,27 @@ import { useState } from "react";
 
 export default function User() {
   let [userName, setName] = useState("catanacomics");
+  let [userIcon, setIcon] = useState("./assets/catanacomics.svg");
 
   function changeUserName() {
     let newUserName = prompt("Insira seu nome nome de usuário:");
 
-    if (newUserName !== "") {
+    if (newUserName) {
       setName(newUserName);
+    }
+  }
+
+  function changeUserIcon() {
+    let newUserIcon = prompt("Insira a url da sua foto de perfil:");
+
+    if (newUserIcon) {
+      setIcon(newUserIcon);
     }
   }
 
   return (
     <div class="usuario">
-      <img src="./assets/catanacomics.svg" alt="imagem de perfil" />
+      <img onClick={changeUserIcon} src={userIcon} alt="nova foto de perfil" />
       <div class="texto">
         <span>
           <strong>{userName}</strong>
