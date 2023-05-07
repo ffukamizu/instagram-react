@@ -1,12 +1,14 @@
 import { useState } from "react";
 
-export default function User(props) {
+export default function User() {
   let [userName, setName] = useState("catanacomics");
 
   function changeUserName() {
-    let newUserName = prompt('Insira seu nome nome de usuário:');
+    let newUserName = prompt("Insira seu nome nome de usuário:");
 
-    setName(newUserName);
+    if (newUserName !== "") {
+      setName(newUserName);
+    }
   }
 
   return (
