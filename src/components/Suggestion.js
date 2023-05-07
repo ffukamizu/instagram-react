@@ -2,9 +2,9 @@ export default function Suggestion(props) {
   return (
     <div class="sugestao">
       <div class="usuario">
-        <img src="./assets/bad.vibes.memes.svg" alt="bad.vibes.memes.svg" />
+        <img src={props.icon} alt={props.name} />
         <div class="texto">
-          <div class="nome">bad.vibes.memes</div>
+          <div class="nome">{props.name}</div>
           <div class="razao">Segue você</div>
         </div>
       </div>

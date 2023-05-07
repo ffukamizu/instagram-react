@@ -4,7 +4,7 @@ export default function User(props) {
       <img src="./assets/catanacomics.svg" alt="imagem de perfil" />
       <div class="texto">
         <span>
-          <strong>catanacomics</strong>
+          <strong>{props.name}</strong>
           <ion-icon name="pencil"></ion-icon>
         </span>
       </div>
