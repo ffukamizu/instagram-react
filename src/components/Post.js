@@ -58,8 +58,8 @@ export default function Post(props) {
         </div>
         <div class="curtidas">
           <img src="./assets/respondeai.svg" alt="respondeai" />
-          <div class="texto" data-test="likes-number">
-            Curtido por <strong>respondeai</strong> e <strong>outras {likeNumber} pessoas</strong>
+          <div class="texto">
+            Curtido por <strong>respondeai</strong> e <strong>outras <p data-test="likes-number">{likeNumber}</p> pessoas</strong>
           </div>
         </div>
       </div>
