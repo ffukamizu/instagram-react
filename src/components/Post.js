@@ -1,10 +1,11 @@
 import { useState } from "react";
+let x = 101523;
 
 export default function Post(props) {
   let [saveIcon, setSaveIcon] = useState("bookmark-outline");
   let [likedPost, setLike] = useState("heart-outline");
   let [heartColor, setHeartColor] = useState("heart-black");
-  let [likeNumber, setNumber] = useState("101.523");
+  let [likeNumber, setNumber] = useState(x);
   
   
   function savePost() {
@@ -17,13 +18,15 @@ export default function Post(props) {
   
   function likePost() {
     if (likedPost === 'heart-outline') {
+      x++
       setLike('heart');
       setHeartColor("heart-red");
-      setNumber("101.524");
+      setNumber(x);
     } else if (likedPost === 'heart') {
+      x--
       setLike('heart-outline');
       setHeartColor("heart-black");
-      setNumber("101.523");
+      setNumber(x);
     }
   }
 
