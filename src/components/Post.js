@@ -2,6 +2,9 @@ import { useState } from "react";
 
 export default function Post(props) {
   let [saveIcon, setSaveIcon] = useState("bookmark-outline");
+  let [likedPost, setLike] = useState("heart-outline");
+  let [heartColor, setHeartColor] = useState("heart-black");
+  let [likeNumber, setNumber] = useState("101.523");
   
   
   function savePost() {
@@ -10,6 +13,22 @@ export default function Post(props) {
     } else if (saveIcon === 'bookmark') {
       setSaveIcon("bookmark-outline");
     }
+  }
+  
+  function likePost() {
+    if (likedPost === 'heart-outline') {
+      setLike('heart');
+      setHeartColor("heart-red");
+      setNumber("101.524");
+    } else if (likedPost === 'heart') {
+      setLike('heart-outline');
+      setHeartColor("heart-black");
+      setNumber("101.523");
+    }
+  }
+
+  function likePostImage() {
+    setLike('heart');
   }
 
   return (
@@ -24,12 +43,12 @@ export default function Post(props) {
         </div>
       </div>
       <div class="conteudo" data-test="post-image">
-        <img src={props.image} alt={props.name} />
+        <img onClick={() => likePostImage()} src={props.image} alt={props.name} />
       </div>
       <div class="fundo">
         <div class="acoes">
           <div>
-            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon class={heartColor} onClick={() => likePost()} name={likedPost} data-test="like-post"></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>
@@ -39,8 +58,8 @@ export default function Post(props) {
         </div>
         <div class="curtidas">
           <img src="./assets/respondeai.svg" alt="respondeai" />
-          <div class="texto">
-            Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+          <div class="texto" data-test="likes-number">
+            Curtido por <strong>respondeai</strong> e <strong>outras {likeNumber} pessoas</strong>
           </div>
         </div>
       </div>
